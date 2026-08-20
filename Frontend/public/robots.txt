@@ -1,0 +1,30 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /signup
+Disallow: /profile
+Disallow: /recommendations
+Disallow: /admin/
+Disallow: /api/
+
+# Common bots specific rules
+User-agent: Googlebot
+Allow: /
+Disallow: /login
+Disallow: /signup
+Disallow: /profile
+Disallow: /recommendations
+
+User-agent: Bingbot
+Allow: /
+Disallow: /login
+Disallow: /signup
+Disallow: /profile
+Disallow: /recommendations
+
+# Crawl-delay suggestion
+Crawl-delay: 10
+
+# Sitemap reference
+Sitemap: https://schemeseva.com/sitemap.xml

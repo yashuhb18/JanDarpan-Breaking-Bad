@@ -1,0 +1,34 @@
+{
+  "name": "scheme-seva",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js",
+    "seed": "node seed.js",
+    "seed:2000": "node seed2000Schemes.js",
+    "seed:state2000": "node seedStateWise2000Schemes.js",
+    "ingest": "node ingestBulkSchemes.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JanDarpan",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.2.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cloudinary": "^2.10.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.4",
+    "mongoose-paginate-v2": "^1.9.0",
+    "multer": "^2.2.0",
+    "nodemon": "^3.1.7",
+    "npm": "^10.9.2",
+    "path": "^0.12.7"
+  }
+}

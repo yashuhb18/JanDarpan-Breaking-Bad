@@ -1,0 +1,65 @@
+db.schemesv2.updateMany(
+  {
+    "openDate": { $exists: true },  // Ensure openDate exists
+    "openDate": { $ne: 'NaN-NaN-NaN' },  // Exclude 'NaN-NaN-NaN'
+    "openDate": { $regex: /^\d{4}-\d{2}-\d{2}$/ }  // Match valid date format (yyyy-mm-dd)
+  },
+  [
+    {
+      $set: {
+        "openDate": { $toDate: "$openDate" }  // Convert to Date type
+      }
+    }
+  ]
+)
+
+db.schemesv2.updateMany(
+  {
+    "openDate": 'NaN-NaN-NaN'  // Find documents where openDate is 'NaN-NaN-NaN'
+  },
+  [
+    {
+      $set: {
+        "openDate": null  // Change openDate to null
+      }
+    }
+  ]
+)
+
+
+db.schemesv2.updateMany(
+  { "closeDate": { $exists: true } }, // Condition to find documents with openDate field
+  [
+    {
+      $set: {
+        "closeDate": { $toDate: "$closeDate" } // Convert openDate to Date type
+      }
+    }
+  ]
+)
+
+db.schemesv2.updateMany(
+  { "nodalMinistryName": { $ne: null } },  // Match only documents where nodalMinistryName is not null
+  [
+    {
+      $set: {
+        "nodalMinistryName": "$nodalMinistryName.label"  // Set nodalMinistryName to the label field value
+      }
+    }
+  ]
+)
+
+db.schemesv2.updateMany(
+  { "Category": { "$exists": true } },  // Ensure that the field 'Category' exists
+  { $rename: { "Category": "category" } }  // Rename 'Category' to 'category'
+)
+
+
+
+
+
+
+
+// Original formattedAll_category_data.json has one element with more than 50 depth with shortSchemeTitle: MDSCY,
+   In order to insert it in mongo reduce its depth using deepseek. it is unnecessarily deep.
+   And it is duplicate too, means there is two documents with same data MDSCY so remove one.

@@ -1,0 +1,37 @@
+/* Keyframes for the shiny effect */
+@keyframes shiny {
+    0% {
+        background-position: -200%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+/* Applying the shiny effect to the text */
+.shiny-text {
+    background: linear-gradient(
+        90deg,
+        #ffff99,
+        #ffff66,
+        #ffff99,
+        #ffcc66,
+        #ff9966,
+        #ff6699,
+        #ff66cc,
+        #cc66ff,
+        #9966ff,
+        #6699ff,
+        #66ccff,
+        #66ffcc,
+        #66ff99,
+        #99ff66,
+        #ccff66,
+        #ffff66
+    ); /* Gradient effect */
+    background-size: 200%;
+    color: transparent; /* Make the text transparent to show the gradient */
+    background-clip: text; /* Clip the background gradient to the text */
+    -webkit-background-clip: text; /* For Safari */
+    animation: shiny 5s infinite linear; /* Animation */
+}

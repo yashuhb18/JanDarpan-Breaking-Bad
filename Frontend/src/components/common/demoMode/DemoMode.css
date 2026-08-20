@@ -1,0 +1,267 @@
+.demo-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    pointer-events: none;
+}
+
+.demo-overlay.active {
+    pointer-events: auto;
+}
+
+/* Backdrop with spotlight hole */
+.demo-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 99998;
+    animation: demo-fade-in 0.3s ease;
+}
+
+@keyframes demo-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Toggle Button */
+.demo-toggle-btn {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #FF3B00, #FF6B35);
+    color: #fff;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    animation: demo-btn-pulse 2s ease-in-out infinite;
+}
+
+.demo-toggle-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 0px #000;
+}
+
+@keyframes demo-btn-pulse {
+    0%, 100% { box-shadow: 4px 4px 0px #000; }
+    50% { box-shadow: 4px 4px 0px #000, 0 0 20px rgba(255, 59, 0, 0.3); }
+}
+
+.demo-toggle-btn.running {
+    background: #000;
+    animation: none;
+}
+
+/* Narration Panel */
+.demo-narration-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100001;
+    background: #000;
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    border-top: 4px solid #FF3B00;
+    animation: demo-panel-slide-up 0.3s ease-out;
+}
+
+@keyframes demo-panel-slide-up {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+}
+
+.demo-narration-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+/* Act Badge */
+.demo-act-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #FF3B00;
+    color: #fff;
+    width: 80px;
+    height: 80px;
+    border: 3px solid #fff;
+    flex-shrink: 0;
+}
+
+.demo-act-badge .act-num {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.demo-act-badge .act-label {
+    font-size: 8px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-top: 2px;
+}
+
+/* Narration Text */
+.demo-narration-text {
+    flex: 1;
+}
+
+.demo-narration-text .step-title {
+    font-size: 16px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #FF3B00;
+    margin-bottom: 4px;
+}
+
+.demo-narration-text .step-description {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+/* Progress Bar */
+.demo-progress-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px 12px;
+}
+
+.demo-progress-bar {
+    height: 3px;
+    background: rgba(255, 255, 255, 0.15);
+    width: 100%;
+    position: relative;
+}
+
+.demo-progress-fill {
+    height: 100%;
+    background: #FF3B00;
+    transition: width 0.5s ease;
+}
+
+/* Controls */
+.demo-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.demo-control-btn {
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    background: transparent;
+    color: #fff;
+    font-weight: 900;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.15s;
+    font-family: 'Inter', sans-serif;
+}
+
+.demo-control-btn:hover {
+    background: #fff;
+    color: #000;
+}
+
+.demo-control-btn.primary {
+    background: #FF3B00;
+    border-color: #FF3B00;
+}
+
+.demo-control-btn.primary:hover {
+    background: #fff;
+    color: #FF3B00;
+}
+
+.demo-control-btn.exit {
+    border-color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.demo-control-btn.exit:hover {
+    border-color: #FF3B00;
+    color: #FF3B00;
+    background: transparent;
+}
+
+/* Step dots */
+.demo-step-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.demo-step-dot {
+    width: 10px;
+    height: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    transition: all 0.2s;
+}
+
+.demo-step-dot.active {
+    background: #FF3B00;
+    border-color: #FF3B00;
+    transform: scale(1.2);
+}
+
+.demo-step-dot.completed {
+    background: #fff;
+    border-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .demo-narration-inner {
+        flex-direction: column;
+        padding: 16px;
+        gap: 12px;
+    }
+    
+    .demo-act-badge {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .demo-act-badge .act-num {
+        font-size: 22px;
+    }
+    
+    .demo-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .demo-toggle-btn {
+        bottom: 85px;
+        right: 12px;
+        padding: 8px 14px;
+        font-size: 9px;
+    }
+}
