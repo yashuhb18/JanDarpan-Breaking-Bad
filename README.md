@@ -1,4 +1,4 @@
-# 🏛️ Breaking Bad — Citizen Governance, AI Forensic Audit & Welfare Discovery Engine
+# 🏛️ JanDarpan AI (जनदर्पण) — Citizen Governance, AI Forensic Audit & Welfare Discovery Engine
 
 > **Empowering 1.4 Billion Citizens with Instant AI Scheme Eligibility, Real-Time Civic Infrastructure Photo Audits, Polygon Blockchain Ledgering, and Section 80 CPC High Court PIL Enforcement.**
 
@@ -156,4 +156,4 @@ REACT_APP_GOOGLE_CLIENT_ID=666459438303-7g1qpjuv12m3q9c0pj8np1ugcuaj31cl.apps.go
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 ---
-*Built with ❤️ for 1.4 Billion Citizens by Team Breaking Bad.*
+*Built with ❤️ for 1.4 Billion Citizens by Team JanDarpan.*
